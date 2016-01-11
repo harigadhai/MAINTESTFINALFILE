@@ -1,0 +1,14 @@
+<div ng-show="monitors == ''"> no items</div>
+<table ng-show="monitors != ''">
+	<thead>
+		<th>monitoId</th>
+		<th>name</th>
+	</thead>
+	<tbody>
+		{{filteredItems}}
+		<tr ng-repeat="list in monitors">
+			<td>{{list.monitorId}}</td>
+			<td>{{list.mo_name}}</td>
+		</tr>
+	</tbody>
+</table>

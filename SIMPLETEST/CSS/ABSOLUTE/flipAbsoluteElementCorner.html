@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>My Angular App</title>
+    <style>
+		.rel{
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			border: 1px solid #ccc;
+			right: 0;
+			top: 100px;
+			background: green;		
+		}
+		.abs{
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			position: absolute;
+			display: none;
+		}
+    </style>
+  </head>
+ <body>
+ 	<div class="rel">
+ 		<div class="abs">
+ 			
+ 		</div>
+ 	</div>
+ </body>
+	
+ <script src="js/jquery-1.9.1.js"></script>
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>	
+<script>
+	$(function(){
+		 $('.rel').hover(function() {
+		 	var offset = $('.rel').offset().left;
+		 	console.log(offset);
+		 	console.log($('.abs').offset());
+		 	//$('.abs').css('left',offset);
+	        $('.abs').show();
+	    }, function() {
+	        $('.abs').hide();
+	    });
+	});
+</script>
+  </body>
+</html>

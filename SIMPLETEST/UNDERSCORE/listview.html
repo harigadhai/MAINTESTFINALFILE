@@ -1,0 +1,16 @@
+<div ng-show="monitors == ''"> no items</div>
+<table ng-show="monitors != ''">
+	<thead>
+		<th>monitoId</th>
+		<th>name</th>
+		<th>isplanned</th>
+	</thead>
+	<tbody>
+		<!-- <tr ng-repeat="list in (filteredItems = (monitors.data.monitors | myFilter:mediaState:monitorName))"> -->
+		<tr ng-repeat="list in monitors">
+			<td>{{list.monitorId}}</td>
+			<td>{{list.mo_name}}</td>
+			<td>{{list.is_planned}}</td>
+		</tr>
+	</tbody>
+</table>

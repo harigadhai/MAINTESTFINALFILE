@@ -1,0 +1,5 @@
+1)handling Images,
+2)angular filters,
+3)how controller should look?Handling Dom in controller,
+4)Directives,
+5)Preserve-3d,perspective,transform

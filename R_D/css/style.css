@@ -1,0 +1,181 @@
+/* reset default values */
+*{
+	margin:0;
+	padding:0;
+}
+html {
+    font-family: sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+    margin: 0;
+	font-size: 62.5%;
+	padding: 20px 15%;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+h2 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+input{
+    font-family: inherit; 
+    font-size: 100%; 
+    margin: 0; 
+}
+
+button,
+input {
+    line-height: normal;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#mainWrapper{
+	border:1px solid #ccc;
+	font-size:1.4em;
+}
+
+#mainWrapper>div{
+	padding:20px 10%;	
+} 
+#resultHolder div > strong{
+	line-height:30px;
+}
+form{
+	width:100%;
+}
+form header {
+  margin: 0 0 20px 0;
+  
+}
+form header h2 {
+  margin: 0 0 5px 0;
+  
+}
+form > div,#resultHolder >div{
+  clear: both;
+  overflow: hidden;
+  padding: 1px;
+  margin: 0 0 10px 0;
+  
+}
+form > div > label,#resultHolder > div > label {
+  width: 25%;
+  float: left;
+  line-height:30px;
+  padding-right: 10px;
+}
+form > div > div,#resultHolder > div > div{
+  width: 75%;
+  float: right;
+}
+input[type=text] {
+  width: 100%;
+  height:30px;
+  padding:0 5px;
+  border: 1px solid #E1E1E1;
+}
+
+input[type=text]:focus{
+  outline: 0;
+  border-color: #4697e4;
+}
+#resultHolder{
+	border-bottom:1px solid #ccc;
+	display:none;
+	margin-top:20px;
+}
+
+.cmnBtn{
+	background:#BC0721;
+	color:#fff;
+	border:none;
+	padding: 5px 10px;
+	font-size:14px;
+	float:right;
+} 
+#paragraphHolder{
+	margin-top:20px;
+}
+#paragraphHolder>p{
+	height:160px;
+	overflow:hidden;
+	text-align: justify;
+	line-height:20px;
+}
+#moreLessLink{
+	text-align:right;
+}
+#moreLessLink a{
+	color:#3163B0;
+	text-decoration:none;
+}
+
+
+
+@media (max-width: 600px) {
+h2{
+	font-size:1.5em;
+}
+  form > div,#resultHolder > div {
+    margin: 0 0 6px 0; 
+  }
+  form > div > label,#resultHolder > div > label{
+	width: 100%;
+    float: none;
+    margin: 0 0 5px 0;
+	line-height:20px;
+  }
+  form > div > div,#resultHolder > div > div{
+    width: 100%;
+    float: none;
+  }
+  .buttonHolder input{
+	margin-top:6px;
+	float:right;
+  }
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=password],
+  textarea,
+  select {
+    width: 100%; 
+  }
+}
+@media (min-width: 1200px) {
+  form > div > label,#resultHolder > div > label{
+  	text-align: right;
+  }
+}
+.errorBorder{
+	border:1px solid firebrick !important;
+}
+.errorMsg {
+	display:none;
+    color: firebrick;
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 4px;
+    position: relative;
+    text-align: center;
+}

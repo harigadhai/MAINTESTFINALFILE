@@ -1,0 +1,12 @@
+<table>
+	<thead>
+		<th>ID</th>
+		<th>Name</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="list in myBaseList">
+			<td><a ui-sref="details.models({mobileId:list.id})">{{list.id}}</a></td>
+			<td>{{list.name}}</td>
+		</tr>
+	</tbody>
+</table>

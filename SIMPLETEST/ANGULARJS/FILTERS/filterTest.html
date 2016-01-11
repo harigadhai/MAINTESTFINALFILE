@@ -1,0 +1,141 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>My Angular App</title>
+  </head>
+  <body >
+  	<select ng-model="mediaState" ng-init="mediaState = ''">
+  		<option value="">select all	</option>
+  		<option value="planned">planned</option>
+  		<option value="unplanned">unplanned</option>
+  	</select>
+  	<select ng-model="monitorName" ng-init="monitorName = ''">
+  		<option value="">select all	</option>
+  		<option value="pepsi">pepsi</option>
+  		<option value="coco">coco</option>
+  		<option value="maaza">maaza</option>
+  		<option value="slice">slice</option>
+  	</select>
+  	<ul>
+  		<li><a href="#/list">List</a></li>
+  		<li><a href="#/anotherList">secondary List</a></li>
+  	</ul>
+  	<div ng-controller="mainController">
+  		<input type="text" ng-model="myPlan">
+  		 <div ng-view></div>
+  	</div>
+	
+
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+ <script src="js/jquery-1.9.1.js"></script>
+<script>
+	var myApp = angular.module("myApp",['ngRoute']);
+	myApp.config(function($routeProvider){
+		 $routeProvider
+		 .when('/list',{
+		 	templateUrl : 'listview.html'
+		 })
+		 .when('/anotherList',{
+		 	templateUrl : 'anotherTable.html'
+		 })
+		 .when('/',{
+		 	templateUrl : 'listview.html',
+		 })
+	});
+	myApp.controller("mainController",function($scope,$filter){
+		$scope.monitors = {
+		"data":{
+			"monitors":[
+				{
+					"monitorId":101,
+					"mo_name":"pepsi",
+					"is_planned":"planned"
+				},{
+					"monitorId":102,
+					"mo_name":"coco",
+					"is_planned":"unplanned"
+				},
+				{
+					"monitorId":101,
+					"mo_name":"maaza",
+					"is_planned":"planned"
+				},{
+					"monitorId":102,
+					"mo_name":"slice",
+					"is_planned":"unplanned"
+				},
+				{
+					"monitorId":101,
+					"mo_name":"pepsi",
+					"is_planned":"planned"
+				},{
+					"monitorId":102,
+					"mo_name":"pepsi",
+					"is_planned":"unplanned"
+				},
+				{
+					"monitorId":101,
+					"mo_name":"maaza",
+					"is_planned":"unplanned"
+				},{
+					"monitorId":102,
+					"mo_name":"pepsi",
+					"is_planned":"unplanned"
+				},
+			]
+		}
+	}
+
+	$scope.monitorDupe = $scope.monitors.data.monitors;
+	$scope.$watch('mediaState', function(newvalue,oldvalue) {
+		//alert(newvalue)
+		$scope.monitors = $filter('myFilter')($scope.monitorDupe,$scope.mediaState,$scope.monitorName);
+     });
+
+	$scope.$watch('monitorName', function(newvalue,oldvalue) {
+		//alert(newvalue)
+		$scope.monitors = $filter('myFilter')($scope.monitorDupe,$scope.mediaState,$scope.monitorName);
+     });
+		/*$scope.selectedMediaState = function(){
+			alert($scope.mediaState)
+			
+		}*/
+		
+	});
+
+	myApp.filter('myFilter', function() {
+		  return function(input,mediaState,monitorName) {
+
+		    var output = [];
+
+		    if(input != ""){
+		    	$.each(input,function(i,value){
+
+		    		if(mediaState != "" && monitorName != ""){
+		    			if(value.is_planned == mediaState && value.mo_name == monitorName){
+		    				output.push(value)
+		    			}
+		    		}else if(mediaState != ""){
+		    			if(value.is_planned == mediaState){
+		    				output.push(value)
+		    			}	    			
+		    		}else if(monitorName != ""){
+		    			if(value.mo_name == monitorName){
+		    				output.push(value)
+		    			}
+		    		}else{
+		    			output = input;	
+		    		}
+		    		
+		    	});
+		    }
+		    return output;
+
+		  }
+
+		});
+
+</script>
+  </body>
+</html>
