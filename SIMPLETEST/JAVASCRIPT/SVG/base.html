@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>My Angular App</title>
+  </head>
+  <body>
+
+  <svg width="1000" height="1000" style="border:1px solid red;">
+      <circle cx="100" cy="100" r="50" fill="orange"/>
+      <rect width="300" height="100" x="200" y= "200" fill="green"/>
+      <line x1="20" y1="20" x2="300" y2="300" style="stroke:#000;stroke-linecap:round;stroke-width:20"/>
+
+      <polyline style="stroke-linejoin:bevel;stroke:black;stroke-width:12;fill:none" points="300 300,350 350,400 300"/>
+      <!-- stroke-linejoin:miter,bevel,round -->
+
+      <ellipse cx="400" cy="160" rx="100" ry="50" style="fill:orange"/>
+
+      <polygon points="500 100,700 200,1000 0" style="fill:red;stroke:black"  id="clickMe"/>
+
+  </svg>
+  
+<script src="js/jquery-1.9.1.js"></script>
+<script>
+$(function(){
+  $("#clickMe").click(function(){
+      alert("check");
+  });
+});
+  
+</script>
+  </body>
+</html>

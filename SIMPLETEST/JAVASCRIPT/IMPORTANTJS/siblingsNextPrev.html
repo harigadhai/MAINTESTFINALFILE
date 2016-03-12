@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>My Angular App</title>
+  </head>
+  <body>
+
+	<div id="siblings">
+		<p>p</p>
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<p>p</p>
+	</div>
+	<div id="next">
+		<p>p</p>
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<p>p</p>
+	</div>
+	<div id="prev">
+		<p>p</p>
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<p>p</p>
+	</div>
+<script src="../js/jquery-1.9.1.js"></script>
+<script>
+var test = $.noConflict();
+test(function(){
+ 	test("#siblings h2").siblings().css("border","1px solid red");
+ 	test("#next h2").next().css("border","1px solid red");//nextAll,nextUntil
+ 	test("#prev h2").prev().css("border","1px solid red");//nextAll,nextUntil
+});
+  
+</script>
+  </body>
+</html>

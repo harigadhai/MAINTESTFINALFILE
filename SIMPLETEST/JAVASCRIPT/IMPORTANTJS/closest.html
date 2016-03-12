@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>My Angular App</title>
+  </head>
+  <body>
+	<div>
+		<ul id="parent1">
+			<li>	
+				child01
+				<ul id="parent2">
+					<li>child11</li>
+					<li>child12</li>
+				</ul>
+			</li>
+			<li>child02</li>
+		</ul>
+	</div>
+<script src="../js/jquery-1.9.1.js"></script>
+<script>
+
+$(function(){
+  $("li").click(function(e){
+  	e.stopPropagation();
+     $(this).closest("ul").css("border","1px solid red");
+  });
+});
+  
+</script>
+  </body>
+</html>
