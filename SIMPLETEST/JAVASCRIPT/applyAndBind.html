@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>My Angular App</title>
+  </head>
+  <body >
+  
+ <script src="js/jquery-1.9.1.js"></script>
+<script>
+  
+  /*function Person(){
+    this.name = "harry";
+    this.hello = function(){
+      alert("say hello to" + this.name)
+    }
+  }
+*/
+  var person = {
+    name : "harry",
+    hello : function(){
+      alert("hi"+this.name)
+    }
+  }  
+
+  var obj = {
+    name : "something",
+    hello : function(){
+      alert("hi buddy"+this.name)
+    }
+  }
+
+  obj.hello.call(person);
+  
+</script>
+  </body>
+</html>
