@@ -4,21 +4,36 @@
     <title>My Angular App</title>
   </head>
   <body >
-  	<div ng-controller="baseParentCtrl">
-           <a ng-click="chcekc()">fdf</a>
-      </div>
-	
+  <div ng-controller="mainCtrl"> 
+    <input type="text" ng-model="test"> 
+    <div hello:world  my-input="test" ></div>
+  </div> 
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
  <script src="js/jquery-1.9.1.js"></script>
 <script>
   var myApp = angular.module('myApp',['ui.router']);
-
-  myApp.controller("baseParentCtrl",function($scope){
-    $scope.chcekc = function(){
-      alert(2)
-    }
-  });
+    myApp.controller('mainCtrl',function($scope){
+       $scope.name = "red";
+       $scope.callMe = function(){
+        alert("check");
+       };
+    });
+   myApp.directive("helloWorld",function(){
+      return {
+        restrict : "AE",
+        //required : 'ngModel',
+        scope:{
+         // test :'=myInput',
+          data:'=myInput',
+        },
+        replace:true,
+        //transclude : true,
+        template:'<h1>{{data}}</h1>',
+        link : function(scope,elem,attr){
+        }
+      };
+   });
 
 </script>
   </body>

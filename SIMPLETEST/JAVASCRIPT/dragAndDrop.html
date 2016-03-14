@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My Angular App</title>
+  </head>
+  <body >
+
+	
+ <script src="js/jquery-1.9.1.js"></script>
+<script>
+document.onmousemove = mouseMove;
+ function mouseMove(ev){
+    ev = ev || window.event;
+    var mousePos = mouseCoords(ev);
+    if(dragObject){
+      dragObject.style.position = 'absolute';
+      dragObject.style.top = mousePos.y;
+      dragObject.style.left = mousePos.x;
+    }
+ }
+
+ function mouseCoords(ev){
+    if(ev.pageX || ev.pageY){
+      return {x:ev.pageX,y:ev.pageY};
+    }
+    return {
+      x:ev.clientX + document.body.scrollLeft - document.body.clientX,
+      y:ev.clientY + document.body.scrollTop - document.body.clientY
+    };
+ }
+
+document.onmouseup = mouseUp;
+var dragObject = null;
+  function mouseUp(){
+    dragObject = null;
+  }
+
+
+function makeClickable(object){
+    object.onmousedown = function(){
+      this.object = this;
+    };
+}
+
+
+
+</script>
+  </body>
+</html>
