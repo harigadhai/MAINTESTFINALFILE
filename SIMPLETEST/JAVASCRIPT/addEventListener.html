@@ -1,0 +1,76 @@
+<!doctype html>
+<html >
+  <head>
+    <title>My Angular App</title>
+  </head>
+  <body >
+  <div class="parent">
+      <div id="child">child</div>
+  </div>
+ <script src="js/jquery-1.9.1.js"></script>
+<script>
+
+window.onload = function(){
+  var element = document.getElementById('child');
+
+  var user = {
+   firstname: 'Wilson',
+   greeting: function(e){
+    alert(e.type);
+    alert(e.target);
+    alert(e.currentTarget);
+    alert(e.bubbles);
+    alert(e.preventDefault);
+    alert(e.stopPropagation);
+    alert(e.stopImmediatePropagation);
+    alert(e.cancelable);
+    alert(e.defaultPrevented);
+    alert(e.isTrusted);
+    alert(e.eventPhase);
+    alert(e.timestamp);
+     alert('My name is ' + this.firstname);
+   }
+  };
+
+  // Attach user.greeting as a callback
+  element.addEventListener('click', user.greeting,true);
+  // alert => 'My name is undefined'
+}
+
+/*$(function(){
+   $(".parent").click(function(){
+    alert(0);
+  });
+  $("#child").click(function(e){
+    alert(1);
+   
+  });
+  $("#child").click(function(e){
+    alert(2);
+     e.stopImmediatePropagation();
+  });
+});*/
+
+
+
+
+/*var list = document.querySelector('ul');
+
+list.addEventListener('click', function(event) {
+  var target = event.target;
+
+  while (target.tagName !== 'LI') {
+    target = target.parentNode;
+    if (target === list) return;
+  }
+
+  // Do stuff here
+});
+*/
+
+
+
+
+</script>
+  </body>
+</html>
