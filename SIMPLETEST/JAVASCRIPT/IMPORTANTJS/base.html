@@ -3,28 +3,16 @@
   <head>
     <title>My Angular App</title>
   </head>
-  <body >
-  
- <script src="js/jquery-1.9.1.js"></script>
-<script>
-  functio topMost(binary){
-      return  function(a){
-        return function(b){
-          return binary(a,b);
-        }
-      }
-  }
-    
-    var add = function(a,b){
-      return a+b;
-    }
-    var mul = function(a,b){
-        return 10+a+b;
-    };
+  <body>
 
-  var calme = topMost(add);
-  console.log(calme(5)(6));
-  console.log(topMost(mul)(5)(6));
+  
+<script src="../js/jquery-1.9.1.js"></script>
+<script>
+$(function(){
+  $("#clickMe").click(function(){
+      alert("check");
+  });
+});
   
 </script>
   </body>

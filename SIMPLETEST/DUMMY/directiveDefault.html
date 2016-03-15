@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My Angular App</title>
+  </head>
+  <body >
+  	<div ng-controller="baseParentCtrl">
+           <div ui-view></div>
+        </div>
+	
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+ <script src="js/jquery-1.9.1.js"></script>
+ <div id="area"></div>
+ <input type="text" name="weight_pounds">
+ <input type="text" name="height_inches">
+<script>
+function calculatebmi(weight, height){
+    //window.alert("hello");
+    var weight = parseInt(document.getElementsByName("weight_pounds"));
+    var height = parseInt(document.getElementsByName("height_inches"));
+
+    var bmi = parseInt(((weight/height)*703));
+    window.alert("your BMI is: " + bmi);
+}
+</script>
+  </body>
+</html>
+
