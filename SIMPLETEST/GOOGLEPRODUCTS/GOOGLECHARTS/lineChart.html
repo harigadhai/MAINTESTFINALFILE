@@ -1,0 +1,56 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>My Angular App</title>
+
+
+    <head>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <script type="text/javascript">
+  google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawTrendlines);
+
+function drawTrendlines() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('date', 'X');
+      data.addColumn('number', 'Dogs');
+      data.addColumn('number', 'Cats');
+      data.addColumn('number', 'Rats'); 
+      data.addRow([new Date(2016, 8, 1), 0, 0,0]);
+      
+      data.addRows([
+        [new Date(2016, 8, 1), 0, 0,1],    [new Date(2016, 8, 2), 10, 5,1],   [new Date(2016, 8, 3), 23, 15,1],  [new Date(2016, 8, 4), 17, 9,1],   [new Date(2016, 8, 5), 18, 10,1],  [new Date(2016, 9, 6), 9, 5,1]
+      ]);
+data.addRow([new Date(2016, 9, 10), 0, 0,0]);
+      var options = {
+        hAxis: {
+          title: 'Time'
+        },
+        vAxis: {
+          title: 'Popularity',
+          minValue:0,
+          minValue:100,
+        },
+        colors: ['#AB0D06', '#007329'],
+        interpolateNulls: true
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('lineChartWrap'));
+      chart.draw(data, options);
+    }
+    
+  </script>
+</head>
+
+  </head>
+  <body >
+
+    <div id="lineChartWrap">
+      
+
+    </div>
+  <script>
+
+  </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="ag-grid.css?ignore=notused17">
+    <script src="ag-grid.js?ignore=notused18"></script>
+    <style>
+        .navbar { border-radius:0; }
+    </style> 
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+</head>
+  <body ng-app="routerApp">
+  <nav class="navbar navbar-inverse" role="navigation">
+     <ul class="nav navbar-nav">
+        <li><a ui-sref="home">Home</a></li>
+        <li><a ui-sref="about">About</a></li>
+    </ul>
+</nav> 
+<div class="container">
+    <div ui-view></div>
+</div> 
+</body>
+</html>

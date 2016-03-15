@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        Enter the string :
+        <input type="text" id="names">
+        <button onclick="myFunction()"> Click Me</button>
+
+<script>
+       var myNames = []
+
+		function myFunction(){
+			var oldItems = JSON.parse(localStorage.getItem('myNames')) || [];
+//myNames.push(document.getElementById("names").value);
+
+			newItem = {"name":document.getElementById("names").value};
+             oldItems.push(newItem);
+			
+            localStorage.setItem("myNames", JSON.stringify(oldItems));
+
+            //var name = JSON.parse(localStorage.getItem("myNames"));
+            console.log(JSON.parse(localStorage.getItem("myNames")));
+        };
+</script>
+    </body>
+</html>

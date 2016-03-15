@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<title>My Angular App</title>
+
+<style>
+</style>
+</head>
+<body ng-controller="testMe">
+<p ng-show="bar != 'bar'">Test</p>
+<p ng-show="bar == 'bar'">Test</p>
+test {{bar == 'bar'}}
+
+<p class="test1 test2 test3">test33</p>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+ <script src="js/jquery-1.9.1.js"></script>
+<script>
+  var myApp = angular.module('myApp',['ui.router']);
+  myApp.controller("testMe",function($scope){
+    $scope.bar = 'bar';
+  });
+ $(function(){
+  $(".test2").click(function(){
+    console.log($(this).attr('class').split(" ")[2]);
+  });
+ });
+
+
+
+
+/*app.filter('myFilter', function() {
+   return function(input) {
+     return input == 1 ? 'Foo' : 'Bar';
+   }
+}
+
+{{foo | myFilter}}*/
+</script>
+</body>
+</html>

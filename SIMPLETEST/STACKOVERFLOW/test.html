@@ -1,0 +1,78 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>My Angular App</title>
+
+    <style>
+
+    .hidden {
+  display: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 2em auto;
+}
+.cols {
+    -moz-column-count:3;
+    -moz-column-gap: 3%;
+    -moz-column-width: 30%;
+    -webkit-column-count:3;
+    -webkit-column-gap: 3%;
+    -webkit-column-width: 30%;
+    column-count: 3;
+    column-gap: 3%;
+    column-width: 30%;
+}
+
+.container div {
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  background: lightblue;
+  margin: 0 0 0.25em;
+  padding: 25px;
+}</style>
+  </head>
+  <body >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div class="container cols">
+  <div><a href="#">See more</a>
+    <p class="hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia ipsam, dolorem illum. Amet officiis dignissimos eligendi excepturi nam, aliquid architecto atque nostrum illo. Ratione nesciunt, id nulla dolores? Blanditiis, praesentium.</p>
+  </div>
+  <div><a href="#">See more</a>
+    <p class="hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error sint nihil labore molestias expedita corrupti ipsa iusto iure sit nisi ab nobis maxime unde voluptates magni, distinctio quae. Deserunt, incidunt.</p>
+  </div>
+  <div><a href="#">See more</a>
+    <p class="hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt accusamus facilis tempore repellat eligendi accusantium laudantium quis, magni a soluta deleniti voluptatibus quam, est aliquid. Atque a, esse. Itaque, consequuntur.</p>
+  </div>
+  <div><a href="#">See more</a>
+    <p class="hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, quo, possimus. Quam odit laudantium, ex alias, repellat laborum quae nobis expedita aperiam iusto iure at facilis obcaecati doloribus quis earum.</p>
+  </div>
+  <div><a href="#">See more</a>
+    <p class="hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ratione doloribus laborum deleniti quae cumque quasi, repellat, ex nemo nulla corporis voluptatum vel doloremque nesciunt cupiditate, veritatis excepturi vero harum.</p>
+  </div>
+  <div><a href="#">See more</a>
+    <p class="hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cupiditate quisquam, dicta eligendi ut eos culpa nisi quod nesciunt vero soluta voluptates illo esse voluptatibus, ab, sint impedit repudiandae dolorum!</p>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+ <script src="js/jquery-1.9.1.js"></script>
+<script>
+ $(function(){
+
+//SlideToggle
+  $('a').attr('href','javascript:void(0)');
+  $('a').click(function() {
+    $(this).next().slideToggle();
+  });
+
+  $('.container div').addClass('cf');
+ });
+
+</script>
+  </body>
+</html>

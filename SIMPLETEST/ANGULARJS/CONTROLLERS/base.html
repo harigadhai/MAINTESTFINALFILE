@@ -5,27 +5,111 @@
   </head>
   <body >
   	<div ng-controller="baseParentCtrl">
-           <div ui-view></div>
+            <div style="height: 94%;" id="myGrid" class="ag-fresh"></div>
+
         </div>
 	
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+ <link rel="stylesheet" type="text/css" href="js/ag-grid.css">
+    <script src="js/ag-grid.js"></script>
  <script src="js/jquery-1.9.1.js"></script>
 <script>
   var myApp = angular.module('myApp',['ui.router']);
+var gridheaders = [];
+var rowDatas = [];
+ myApp.controller("baseParentCtrl",function($scope){
+  
+  $scope.gridheaders = [
+                     { headerName: "ID", field: "ID", seqNo: 0 },
+                     { headerName: "Patient Name", field: "PatientName", seqNo: 1 },
+                     { headerName: "Gender", field: "Gender", seqNo: 3 },
+                     { headerName: "Age", field: "Age", seqNo: 2 },
+                     { headerName: "Phone Number", field: "mobileNumber", seqNo: 4 }
+    ];
 
-  myApp.controller("baseParentCtrl",function($scope){
-    var panel = {"test":"jyothi"};
-    $scope.panel = panel;
-    $scope.panel.test = "deepika";
-    console.log(panel);
-    console.log($scope.panel);
-    $scope.panel = [];
-    console.log(panel);
-    console.log($scope.panel);
-    console.log(panel);
+
+  $scope.rowDatas = [
+                     { ID: "09-14-002880", PatientName: "PRAVEEN KUMAR", Gender: "Male", Age: "20", mobileNumber: 9879878971, patientId: "test" },
+                     { ID: "09-13-000188", PatientName: "VAR", Gender: "Male", Age: "20", mobileNumber: '', patientId: "ZXC12" },
+                     { ID: "09-05-019825", PatientName: "KARMA", Gender: "Male", Age: "29", mobileNumber: '', patientId: "ZA2545635" },
+                     { ID: "09-04-010524", PatientName: "FRANKLIN ANTHONY", Gender: "Male", Age: "20", mobileNumber: '', patientId: "Z7552396" },
+                     { ID: "09-08-009303", PatientName: "DARYOUSH", Gender: "Male", Age: "29", mobileNumber: '', patientId: "Z2548467" },
+                     { ID: "09-12-031048", PatientName: "SMITA", Gender: "Female", Age: "20", mobileNumber: 9880222187, patientId: "Z2296538" },
+                     { ID: "09-11-026001", PatientName: "ADITYA DILIP", Gender: "Male", Age: "29", mobileNumber: '', patientId: "Z2277913" }
+    ];
+
+            $scope.gridOptions = {
+                columnDefs: $scope.gridheaders,
+                rowData: $scope.rowDatas
+            };
+     
+  
+
+          //  document.addEventListener('DOMContentLoaded', function() {
+
+              var gridDiv = document.querySelector('#myGrid');
+
+              new agGrid.Grid(gridDiv, $scope.gridOptions);
+
+         // });
+
+ 
   });
 
+
+/*
+  var columnDefs = [
+
+
+
+];
+
+
+var rowData = [];
+
+columnDefs = [
+                     { headerName: "ID", field: "ID", seqNo: 0 },
+                     { headerName: "Patient Name", field: "PatientName", seqNo: 1 },
+                     { headerName: "Gender", field: "Gender", seqNo: 3 },
+                     { headerName: "Age", field: "Age", seqNo: 2 },
+                     { headerName: "Phone Number", field: "mobileNumber", seqNo: 4 }
+    ];
+
+
+    rowDatas = [
+                     { ID: "09-14-002880", PatientName: "PRAVEEN KUMAR", Gender: "Male", Age: "20", mobileNumber: 9879878971, patientId: "test" },
+                     { ID: "09-13-000188", PatientName: "VAR", Gender: "Male", Age: "20", mobileNumber: '', patientId: "ZXC12" },
+                     { ID: "09-05-019825", PatientName: "KARMA", Gender: "Male", Age: "29", mobileNumber: '', patientId: "ZA2545635" },
+                     { ID: "09-04-010524", PatientName: "FRANKLIN ANTHONY", Gender: "Male", Age: "20", mobileNumber: '', patientId: "Z7552396" },
+                     { ID: "09-08-009303", PatientName: "DARYOUSH", Gender: "Male", Age: "29", mobileNumber: '', patientId: "Z2548467" },
+                     { ID: "09-12-031048", PatientName: "SMITA", Gender: "Female", Age: "20", mobileNumber: 9880222187, patientId: "Z2296538" },
+                     { ID: "09-11-026001", PatientName: "ADITYA DILIP", Gender: "Male", Age: "29", mobileNumber: '', patientId: "Z2277913" }
+    ];
+
+// a cell renderer that also prints the time, so we know when the cell was rendered
+
+
+var gridOptions = {
+
+    columnDefs: columnDefs,
+
+    rowData: rowDatas
+
+};
+
+
+
+// setup the grid after the page has finished loading
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    var gridDiv = document.querySelector('#myGrid');
+
+    new agGrid.Grid(gridDiv, gridOptions);
+
+});
+*/
 </script>
   </body>
 </html>
