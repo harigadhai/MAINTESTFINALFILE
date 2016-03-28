@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>My Angular App</title>
+  </head>
+  <body>
+
+  <div ng-controller="myController">
+    <input type="text" ng-model="myName">
+    <div demo>
+      <p>{{myName}}</p>
+
+    </div>  
+  </div>
+
+<script src="../angular.min.js"></script>
+<script src="js/jquery-1.9.1.js"></script>
+
+<script>
+  var myApp = angular.module("myApp",[]);
+
+  myApp.controller("myController",function($scope){
+      $scope.myName = "hariharasudhan"
+  });
+
+  myApp.directive("demo",function(){
+      return {
+        restrict : "EA",
+        scope : {
+          myName : "@"
+        },
+        template : "<input type='text' ng-model='myName'/><div><p>{{myName}}</p><p ng-transclude></p></div>",
+        transclude : true,
+        link : function(scope,elem,attrs){
+        }
+      }
+  });
+</script>
+  </body>
+</html>
+

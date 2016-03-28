@@ -3,3 +3,14 @@
 3)how controller should look?Handling Dom in controller,
 4)Directives,
 5)Preserve-3d,perspective,transform
+
+
+1.create basic google map .
+2.create multiple markers with oops.
+3.create tooltip on hover on marker
+4.all features in google maps
+	geocoder,
+	autocomplete,
+	place searches
+5.how to use place icons in google map,
+6.click and see the detail of the markers
