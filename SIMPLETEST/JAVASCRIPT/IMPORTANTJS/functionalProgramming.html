@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>functional programming in Javascript</title>
+  </head>
+  <body >
+<script>
+//MAP -  number of input values and the number of output values for a map call is always equal.
+//filter - 
+
+//MAP 
+var array = [1,2,3,4,5];
+/*
+var newMapArray = array.map(function(number){
+	alert(number)
+		return number*5;
+}).reduce(function(total,number){
+	alert(number)
+	return total+number;
+},2);
+
+console.log(newMapArray)*/
+
+
+// filter only odd values from array and add 5 with it
+var newMapArray = array.filter(function(number){
+	return (number % 2 != 0);
+}).reduce(function(total,number,number2,number3){
+	console.log(total,number,number2,number3)
+	return number + total;
+},10);
+console.log(newMapArray)
+
+
+</script>
+  </body>
+</html>
