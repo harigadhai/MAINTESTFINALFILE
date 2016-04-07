@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>function Chaining</title>
+  </head>
+  <body >
+
+  
+ <script src="jquery-1.9.1.js"></script>
+
+<script>
+      function X(){
+
+        var count = 0;
+        this.a = function(add){
+          count += add;
+          return this;
+        }
+        this.b = function(sub){
+          count -= sub;
+          return this;
+        }
+        this.c = function(){
+          alert(count);
+          //return count;
+        }
+      }
+      var x = new X();
+      x.a(10).b(5).c();
+</script>
+  </body>
+</html>
+

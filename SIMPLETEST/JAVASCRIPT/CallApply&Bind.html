@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Call,apply and bind</title>
+  </head>
+  <body >
+
+  
+
+<script>
+  var obj1  = {a:10};
+  var obj2  = {a:40};
+
+ var X = function(c,d,e){
+    return this.a+c+d+e;
+ }
+
+var bound1 = X.bind(obj2);
+console.dir(bound1(1,2,3))
+</script>
+  </body>
+</html>
+
