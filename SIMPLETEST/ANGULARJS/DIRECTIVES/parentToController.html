@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>My Angular App</title>
+  </head>
+  <body>
+
+  <div ng-controller="parentController">
+    <div>
+      <p>{{myName}}</p>
+      <p demo >change my Name</p>
+      <p>{{myName}}</p>
+    </div>  
+  </div>
+
+<script src="../angular.min.js"></script>
+<script src="../jquery-1.9.1.js"></script>
+
+<script>
+  var myApp = angular.module("myApp",[]);
+
+  myApp.controller("parentController",function($scope){
+      $scope.myName = "hariharasudhan";
+  });
+
+  myApp.directive("demo",function(){
+      return {
+        restrict : "EA",  
+        scope : {
+          myName : "@"
+        },  
+        template : "<input type='text' ng-model='myName'/><div><p>{{myName}}</p><p ></p></div>",
+        link : function(scope,elem,attrs){            
+        }
+      }
+  });
+</script>
+  </body>
+</html>
+
