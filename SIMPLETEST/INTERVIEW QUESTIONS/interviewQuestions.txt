@@ -1,0 +1,36 @@
+DIRECTIVES
+====================
+1.Isolated scope full explanation
+2.transclude
+3.directive controllers
+reuire ?ngOption
+examples for directives
+directive to directive communication
+angular reload
+$apply();
+$watch
+promises
+resolve
+reject
+
+ng-repeat
+complex ng-repeat
+(select box ng-model
+ng-option)
+
+wr i have to do DOM manipulation and example
+multiple modules and examples
+this vs $scope
+what is the use of literal object 
+
+http://www.dotnet-tricks.com/Tutorial/angularjs/UVDE100914-Understanding-AngularJS-$rootScope-and-$scope.html
+http://www.undefinednull.com/2014/08/11/a-brief-walk-through-of-the-ng-options-in-angularjs/
+
+cross browser problems (htmlSiv,modernizer)
+
+$setViewValue
+$render
+
+
+1.check abstraction encapsulation,polymorphism.
+2.function chaining
