@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>My Angular App</title>
+  </head>
+  <body>
+
+  <div ng-controller="myController">
+    <!-- <input type="text" ng-model="myName"> -->
+    <demo>
+    </demo>  
+  </div>
+
+<script src="../angular.min.js"></script>
+<script src="js/jquery-1.9.1.js"></script>
+
+<script>
+  var myApp = angular.module("myApp",[]);
+
+  myApp.controller("myController",function($scope){
+      $scope.myName = "hariharasudhan"
+  });
+
+  myApp.directive("demo",function(){
+      return {
+        //  restrict : "E",
+        scope : {},
+       /* template : "<input type='text' ng-model='myName'/><div><p>{{title}}</p></div>",*/
+       
+        link : function(scope,elem,attrs){
+            scope.title = "myTitle";
+            scope.myName = 5667;
+            scope.visible = true;
+        },
+          templateUrl: 'inventory.html'
+      }
+  });
+</script>
+
+<script type="text/ng-template" id="inventory.html">
+    <div ng-if="visible">
+         <h1>{{title}}</h1>
+         <input type="number" ng-model="myName"/>
+    </div>
+</script>
+  </body>
+</html>
+

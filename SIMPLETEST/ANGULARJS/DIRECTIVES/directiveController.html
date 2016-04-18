@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>My Angular App</title>
+  </head>
+  <body>
+
+  <div ng-controller="myController">
+        <p>{{myName}}</p>   
+        <input type="text" ng-model="foo">     
+    <div demo foo="{{foo}}">
+
+    </div>  
+  </div>
+
+<script src="../angular.min.js"></script>
+
+<script>
+  var myApp = angular.module("myApp",[]);
+
+  myApp.controller("myController",function($scope){
+      $scope.myName = "hariharasudhan";
+      $scope.foo = "myFoo";
+  });
+
+  myApp.controller("dirController",function($scope){
+        this.myName = "harry";
+        //this.foo = "myFoo";
+  });
+
+  myApp.directive("demo",function(){
+      return {
+        restrict : "EA",
+        scope : {
+          foo : "@"
+        },
+        controller : "dirController",
+        controllerAs: "dirCtrl",
+        //bindToController: false,
+        template : "<input type='text' ng-model='dirCtrl.myName'/><div><p>{{dirCtrl.myName}}{{foo}}</p></div>",
+        link : function(scope,elem,attrs){
+        }
+      }
+  });
+</script>
+  </body>
+</html>
+
